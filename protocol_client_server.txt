@@ -1,0 +1,71 @@
+//This program is the client-part of a simple feedback tool, developped
+//to get feedback (e.g. for teaching) through this specific command line program,
+//communicating over a simple TCP connection
+//should run without problems under at least most of the x64 linux os
+//
+//Version 1, december 2017
+//Copyright (C) 2017  Tobias Endrikat
+//
+//This program is free software; you can redistribute it and/or modify
+//it under the terms of the GNU General Public License as published by
+//the Free Software Foundation; either version 3 of the License, or
+//(at your option) any later version.
+//
+//This program is distributed in the hope that it will be useful,
+//but WITHOUT ANY WARRANTY; without even the implied warranty of
+//MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+//GNU General Public License for more details.
+//
+//You should have received a copy of the GNU General Public License
+//along with this program; if not, write to the Free Software Foundation,
+//Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301  USA
+//
+//some of the code is taken from http://beej.us/guide/bgnet/
+//
+// ------------------------------------------------------------------------
+//
+
+
+
+
+
+
+all length in network-byte-order!
+
+########################################################
+message-protocol server to client
+########################################################
+
+-------------------------------
+	header (6 bytes)
+-------------------------------
+
+2 Bytes, uint16_t: total number of questions
+2 Bytes, uint16_t: number of coming question or statement
+	- starting with 0 for initial briefing
+	- 1 for first question
+	- "total number of questions" final statement
+2 Bytes, uint16_t: length of coming question or statement
+
+-------------------------------
+	body (optional) ("length of coming question or statement)
+-------------------------------
+char *message
+
+
+########################################################
+message-protocol client to server
+########################################################
+
+-------------------------------
+	header (6 bytes)
+-------------------------------
+
+[maybe for later use]: 2 Bytes, uint16_t: client version
+[maybe for later use]: 2 Bytes, uint16_t: next requested question
+2 Bytes, uint16_t: length of answer to last question
+
+-------------------------------
+	body (optional) ("length of answer to last question" bytes)
+-------------------------------
+char *message

@@ -1,0 +1,5 @@
+Hello and thanks for participating in this survey. :)\nThis survey is anonymous, logged are only your answers and the current date (not time), nothing else.\nIf you don't wanna answer to a question you can just skip it with pressing <enter>.\nSince the answers are commited immediately after pressing <enter>, it is not possible to correct them later.
+question 1 line 1\nquestion 1 line 2\nquestion 1 line 3\nquestion 1 line 4
+question 2...?
+question 3...?
+Once again thanks a lot for participating. Your responses have been successfully transmitted :)
