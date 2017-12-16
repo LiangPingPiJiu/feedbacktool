@@ -11,7 +11,7 @@ exept the first and the last one, which are only messages to the client. A templ
 Then ask the people you are requesting feedback from to run the client,
 which they should start with your servers DNS name or IP and the public port.
 
-The feedback will be collected in a file in the directory where the server runs, it's called 'year_mm_dd_feedback.csv'
+The feedback will be collected in a file in the 'received_feedback' directory, which is a subdirectory of the one, where the server runs. The file is called 'year_mm_dd_feedback.csv'
 
 It's free software, feel free to use, share and modify it, a copy of the license, the GPLv3 is attached.
 

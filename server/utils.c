@@ -236,10 +236,10 @@ void writeOutputFile(char *buf, uint16_t bufLen)
 	FILE *outputFD;
 
 	//uses current date + _feedback.csv as file name
-	char outputFile[24];
+	char outputFile[FEEDBACK_PATH_LENGTH];
 	time_t t = time(NULL);
 	struct tm tm = *localtime(&t);
-	sprintf(outputFile, "%d_%d_%d_feedback.csv", tm.tm_year + 1900, tm.tm_mon + 1, tm.tm_mday);
+	sprintf(outputFile, "%s%d_%d_%d_feedback.csv", FEEDBACK_PATH, tm.tm_year + 1900, tm.tm_mon + 1, tm.tm_mday);
 
 	//Open for appending (writing at end of file).  The file is created if it does not exist.  The stream is positioned at the end of the file.
 	outputFD = fopen(outputFile, "a");

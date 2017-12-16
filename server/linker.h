@@ -32,7 +32,8 @@
 #define MAX_LINES 50
 #define TIMEOUT 10
 #define HEADER_SIZE 6
-
+#define FEEDBACK_PATH "received_feedback/"
+#define FEEDBACK_PATH_LENGTH 100
 
 #include <stdio.h>
 #include <stdlib.h>
